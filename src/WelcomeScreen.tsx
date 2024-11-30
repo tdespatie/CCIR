@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import CheckBox from 'react-native-check-box';
 
 interface WelcomeScreenProps {
@@ -8,7 +8,7 @@ interface WelcomeScreenProps {
   };
 }
 
-const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ navigation }) => {
+const WelcomeScreen: React.FC<WelcomeScreenProps> = ({navigation}) => {
   const [checked, setChecked] = useState<boolean>(false);
 
   const handleContinue = () => {
@@ -16,36 +16,42 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ navigation }) => {
       navigation.navigate('OrgSelectionRevised');
     }
   };
-  
+
   return (
     <View style={styles.container}>
       {/* Logo Image */}
-      <Image source={require('../assets/images/CanadianArmyLogo.jpeg')} style={styles.logo} />
+      <Image
+        source={require('../assets/images/CanadianArmyLogo.jpeg')}
+        style={styles.logo}
+      />
 
       {/* Welcome Message */}
       <Text style={styles.title}>Welcome to the CCIR Portal</Text>
       <Text style={styles.subtitle}>
-        This application is to be used for effective and timely reporting of critical information in order to ensure
-        successful decision making and situational tracking by Comd CA and HQ.
+        This application is to be used for effective and timely reporting of
+        critical information in order to ensure successful decision making and
+        situational tracking by Comd CA and HQ.
       </Text>
 
       {/* Checkbox */}
       <View style={styles.checkboxContainer}>
-        <CheckBox 
-          isChecked={checked} 
+        <CheckBox
+          isChecked={checked}
           onClick={() => {
             setChecked(!checked);
-          }} 
+          }}
         />
-        <Text style={styles.checkboxText}>I will only input Protected A data</Text>
+        <Text style={styles.checkboxText}>
+          {' '}
+          I will only input Protected A data
+        </Text>
       </View>
 
       {/* Continue Button */}
       <TouchableOpacity
-        style={[styles.button, { opacity: checked ? 1 : 0.5 }]}
+        style={[styles.button, {opacity: checked ? 1 : 0.5}]}
         onPress={handleContinue}
-        disabled={!checked}
-      >
+        disabled={!checked}>
         <Text style={styles.buttonText}>Continue</Text>
       </TouchableOpacity>
     </View>
