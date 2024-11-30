@@ -15,6 +15,7 @@ const OrgSelectionRevised: React.FC<any> = ({navigation}) => {
   const [reportTitle, setReportTitle] = useState<string>('');
   const [reportSubtitle, setReportSubtitle] = useState<string>('');
   const [orgData, setOrgData] = useState<any>(null);
+  const [validated, setValidated] = useState<boolean>(false);
 
   React.useEffect(() => {
     // Load JSON data (adjust path if hosted remotely)
@@ -43,6 +44,14 @@ const OrgSelectionRevised: React.FC<any> = ({navigation}) => {
       setCcirOptions([]);
     }
   }, [reportingOrg, orgData]);
+
+  React.useEffect(() => {
+    if (reportSubtitle && reportTitle && reportingOrg && ccirComd) {
+      setValidated(true);
+    } else {
+      setValidated(false);
+    }
+  }, [reportSubtitle, reportTitle, reportingOrg, ccirComd]);
 
   const handleContinue = () => {
     // Pass the state to the next screen
@@ -107,9 +116,11 @@ const OrgSelectionRevised: React.FC<any> = ({navigation}) => {
           value={reportSubtitle}
           onChangeText={text => setReportSubtitle(text)}
         />
-        {/* </View> */}
         {/* Button */}
-        <TouchableOpacity style={styles.button} onPress={handleContinue}>
+        <TouchableOpacity
+          style={[styles.button, {opacity: validated ? 1 : 0.5}]}
+          disabled={!validated}
+          onPress={handleContinue}>
           <Text style={styles.buttonText}>Continue</Text>
         </TouchableOpacity>
       </View>

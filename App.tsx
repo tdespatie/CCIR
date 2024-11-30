@@ -2,9 +2,9 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {enableScreens} from 'react-native-screens';
-import WelcomeScreen from './src/WelcomeScreen';
-import OrgSelection from './src/OrgSelection';
-import DateTimeGroup from './src/DateTimeGroup';
+import WelcomeScreen from './src/screens/WelcomeScreen';
+import OrgSelection from './src/screens/OrgSelection';
+import DateTimeGroup from './src/screens/DateTimeGroup';
 
 enableScreens();
 const Stack = createStackNavigator();
