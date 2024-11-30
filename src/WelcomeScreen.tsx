@@ -13,7 +13,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ navigation }) => {
 
   const handleContinue = () => {
     if (checked) {
-      navigation.navigate('LSelection');
+      navigation.navigate('OrgSelectionRevised');
     }
   };
   

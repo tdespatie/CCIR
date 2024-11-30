@@ -3,7 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { enableScreens } from 'react-native-screens';
 import WelcomeScreen from './src/WelcomeScreen';
-import LSelection from './src/OrgSelection';
+import OrgSelectionRevised from './src/OrgSelection';
+
 enableScreens();
 const Stack = createStackNavigator();
 
@@ -12,7 +13,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Welcome">
         <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ headerShown: false}} />
-        <Stack.Screen name="LSelection" component={LSelection} options={{ title: "Command Selection"}} />
+        <Stack.Screen name="OrgSelectionRevised" component={OrgSelectionRevised} options={{ title: "Command Selection"}} />
       </Stack.Navigator>
     </NavigationContainer>  );
 }

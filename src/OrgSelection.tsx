@@ -1,52 +1,72 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
-interface OrgSelectionProps {
-  navigation: {
-    goBack: () => void;
-  };
+interface OrgSelectionRevisedProps {
+  // navigation: {
+  //   goBack: () => void;
+  // };
 }
 
-const OrgSelection: React.FC<OrgSelectionProps> = ({ navigation }) => {
+const OrgSelectionRevised: React.FC<OrgSelectionRevisedProps> = () => {
+  const [reportingOrg, setReportingOrg] = useState<string>('');
+  const [ccirComd, setCcirComd] = useState<string>('');
+  const [reportTitle, setReportTitle] = useState<string>('');
+  const [reportSubtitle, setReportSubtitle] = useState<string>('');
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Chain of Command Selection</Text>
-      <Text style={styles.subtitle}>CCIR report will be directed accordingly</Text>
-
-      <Text style={styles.dropdownLabel}>
-        L1 Selection{'\n'} (Assistant Deputy Minister)
-      </Text>
-      <Picker style={styles.picker}>
-        <Picker.Item label="Value" value="value" />
-        {/* Add more options here */}
-      </Picker>
-
-      <Text style={styles.dropdownLabel}>
-        L2 Selection{'\n'} (Director General / Formation Commander)
-      </Text>
-      <Picker style={styles.picker}>
-        <Picker.Item label="Value" value="value" />
-        {/* Add more options here */}
-      </Picker>
-
-      <Text style={styles.dropdownLabel}>
-        L3 Selection{'\n'} (Director / Unit Commander)
-      </Text>
-      <Picker style={styles.picker}>
-        <Picker.Item label="Value" value="value" />
-        {/* Add more options here */}
-      </Picker>
-
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => {
-          // Navigate back to the previous screen (or to any other screen)
-          navigation.goBack();
-        }}
+      {/* Dropdown: Reporting Org */}
+      <Text style={styles.title}>Reporting Org</Text>
+      <Picker
+        selectedValue={reportingOrg}
+        onValueChange={(itemValue) => setReportingOrg(itemValue)}
+        style={styles.picker}
       >
-        <Text style={styles.buttonText}>Continue</Text>
+        <Picker.Item label="Value" value="value" />
+        {/* Add more options here */}
+      </Picker>
+
+      {/* Dropdown: CCIR Comd */}
+      <Text style={styles.title}>CCIR Comd</Text>
+      <Picker
+        selectedValue={ccirComd}
+        onValueChange={(itemValue) => setCcirComd(itemValue)}
+        style={styles.picker}
+      >
+        <Picker.Item label="Value" value="value" />
+        {/* Add more options here */}
+      </Picker>
+
+      {/* Dropdown: Report Title */}
+      <Text style={styles.title}>Report Title</Text>
+      <Picker
+        selectedValue={reportTitle}
+        onValueChange={(itemValue) => setReportTitle(itemValue)}
+        style={styles.picker}
+      >
+        <Picker.Item label="Value" value="value" />
+        {/* Add more options here */}
+      </Picker>
+
+      {/* Dropdown: Report Sub-Title */}
+      <Text style={styles.title}>Report Sub-Title</Text>
+      <Picker
+        selectedValue={reportSubtitle}
+        onValueChange={(itemValue) => setReportSubtitle(itemValue)}
+        style={styles.picker}
+      >
+        <Picker.Item label="Value" value="value" />
+        {/* Add more options here */}
+      </Picker>
+
+      {/* Button */}
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Select Report Type</Text>
       </TouchableOpacity>
+
+      {/* Icon or Arrow Below Button */}
+      <Text style={styles.arrow}>⬇</Text>
     </View>
   );
 };
@@ -60,30 +80,28 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   title: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    marginBottom: 20,
+    fontSize: 24,
+    fontWeight: '800',
+    marginBottom: 5,
     textAlign: 'center',
   },
-  subtitle: {
+  label: {
     fontSize: 16,
-    textAlign: 'center',
-    marginBottom: 20,
-  },
-  dropdownLabel: {
-    fontSize: 16,
-    marginBottom: 10,
+    fontWeight: '500',
+    marginBottom: 5,
     textAlign: 'center',
   },
   picker: {
     height: 50,
     width: 200,
     marginBottom: 20,
+    borderColor: 'gray',
+    borderWidth: 1,
   },
   button: {
     backgroundColor: 'black',
     paddingVertical: 12,
-    paddingHorizontal: 80,
+    paddingHorizontal: 50,
     borderRadius: 30,
     marginTop: 20,
   },
@@ -92,6 +110,11 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
   },
+  arrow: {
+    fontSize: 24,
+    color: 'gray',
+    marginTop: 10,
+  },
 });
 
-export default OrgSelection;
+export default OrgSelectionRevised;
