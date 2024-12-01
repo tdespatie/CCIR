@@ -41,7 +41,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({navigation}) => {
             setChecked(!checked);
           }}
         />
-        <Text style={styles.checkboxText}>
+        <Text style={styles.checkboxText} onPress={() => setChecked(!checked)}>
           {' '}
           I will only input Protected A data
         </Text>

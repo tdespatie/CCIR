@@ -47,6 +47,7 @@ const DateTimeGroup: React.FC<any> = ({route}) => {
     //   reportTitle,
     //   reportSubtitle,
     // });
+    console.log('HERE');
     if (
       Number(latitude) >= -90 &&
       Number(latitude) <= 90 &&
@@ -55,9 +56,20 @@ const DateTimeGroup: React.FC<any> = ({route}) => {
     ) {
       console.log('Valid coordinates:', {latitude, longitude});
     } else {
-      Alert.alert('Invalid coordinates');
+      Alert.alert(
+        'Invalid coordinates',
+        'Please confirm the coordinates you entered',
+      );
     }
   };
+
+  React.useEffect(() => {
+    if (latitude && longitude) {
+      setValidated(true);
+    } else {
+      setValidated(false);
+    }
+  }, [latitude, longitude]);
 
   return (
     <View style={styles.outerContainer}>
@@ -99,7 +111,7 @@ const DateTimeGroup: React.FC<any> = ({route}) => {
         {/* Dropdown: Report Sub-Title */}
         <Text style={styles.title}>Enter Longitude</Text>
         <TextInput
-          style={styles.textInput}
+          style={[styles.textInput, {marginBottom: 60}]}
           placeholder="Enter Longitude"
           keyboardType="numeric"
           value={longitude}

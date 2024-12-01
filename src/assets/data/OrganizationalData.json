@@ -5,21 +5,24 @@
             "L2Organizations": [
                 {"name": "Maritime Forces Atlantic (MARLANT)"},
                 {"name": "Maritime Forces Pacific (MARPAC)"},
-                {"name": "Canadian Submarine Force"},
                 {"name": "Naval Reserve"}
             ]
         },
         {
             "name": "Canadian Army (CA)",
             "L2Organizations": [
-                {"name": "1st Canadian Division"},
-                {"name": "3rd Canadian Division"},
                 {"name": "2nd Canadian Division"},
-                {"name": "Royal Canadian Armoured Corps (RCAC)"},
-                {"name": "Royal Canadian Infantry Corps (RCIC)"},
-                {"name": "Royal Canadian Artillery (RCA)"},
-                {"name": "Canadian Army Doctrine Training Centre (CADTC)"},
-                {"name": "Combat Support and Combat Service Support units"}
+                {"name": "3rd Canadian Division"},
+                {"name": "4th Canadian Division"},
+                {"name": "5th Canadian Division"},
+                {"name": "Canadian Army Doctrine Training Centre (CADTC)",
+                "L3Organizations": [
+                    {"name": "Peace Support Training Centre"},
+                    {"name": "Canadian Army Command and Staff College"},
+                    {"name": "Combat Training Centre (CTC) Headquarters"},
+                    {"name": "Canadian Manoeuvre Training Centre(CMTC)"}
+                ]
+            }
             ]
         },
         {
@@ -27,18 +30,16 @@
             "L2Organizations": [
                 {"name": "1 Canadian Air Division"},
                 {"name": "2 Canadian Air Division"},
-                {"name": "Canadian NORAD Region (CNR)"},
+                {"name": "3 Canadian Space Division"},
                 {"name": "Air Mobility Group (AMG)"},
-                {"name": "Canadian Forces Air Navigation School"},
-                {"name": "Royal Canadian Air Cadets"}
+                {"name": "RCAF Aerisoace Warfare Centre"}
             ]
         },
         {
             "name": "Canadian Special Operations Forces Command (CANSOFCOM)",
             "L2Organizations": [
                 {"name": "Joint Task Force 2 (JTF2)"},
-                {"name": "Canadian Special Operations Regiment (CSOR)"},
-                {"name": "4th Canadian Division (CANSOFCOM)"}
+                {"name": "Canadian Special Operations Regiment (CSOR)"}
             ]
         },
         {
