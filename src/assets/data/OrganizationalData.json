@@ -1,86 +1,83 @@
 {
-    "L1Organizations": [
+  "L1Organizations": [
+    {
+      "name": "Royal Canadian Navy (RCN)",
+      "L2Organizations": [
+        {"name": "Maritime Forces Atlantic (MARLANT)"},
+        {"name": "Maritime Forces Pacific (MARPAC)"},
+        {"name": "Naval Reserve"}
+      ]
+    },
+    {
+      "name": "Canadian Army (CA)",
+      "L2Organizations": [
+        {"name": "2nd Canadian Division"},
+        {"name": "3rd Canadian Division"},
+        {"name": "4th Canadian Division"},
+        {"name": "5th Canadian Division"},
         {
-            "name": "Royal Canadian Navy (RCN)",
-            "L2Organizations": [
-                {"name": "Maritime Forces Atlantic (MARLANT)"},
-                {"name": "Maritime Forces Pacific (MARPAC)"},
-                {"name": "Naval Reserve"}
-            ]
-        },
-        {
-            "name": "Canadian Army (CA)",
-            "L2Organizations": [
-                {"name": "2nd Canadian Division"},
-                {"name": "3rd Canadian Division"},
-                {"name": "4th Canadian Division"},
-                {"name": "5th Canadian Division"},
-                {"name": "Canadian Army Doctrine Training Centre (CADTC)",
-                "L3Organizations": [
-                    {"name": "Peace Support Training Centre"},
-                    {"name": "Canadian Army Command and Staff College"},
-                    {"name": "Combat Training Centre (CTC) Headquarters"},
-                    {"name": "Canadian Manoeuvre Training Centre(CMTC)"}
-                ]
-            }
-            ]
-        },
-        {
-            "name": "Royal Canadian Air Force (RCAF)",
-            "L2Organizations": [
-                {"name": "1 Canadian Air Division"},
-                {"name": "2 Canadian Air Division"},
-                {"name": "3 Canadian Space Division"},
-                {"name": "Air Mobility Group (AMG)"},
-                {"name": "RCAF Aerisoace Warfare Centre"}
-            ]
-        },
-        {
-            "name": "Canadian Special Operations Forces Command (CANSOFCOM)",
-            "L2Organizations": [
-                {"name": "Joint Task Force 2 (JTF2)"},
-                {"name": "Canadian Special Operations Regiment (CSOR)"}
-            ]
-        },
-        {
-            "name": "Military Personnel Command (MPC)",
-            "L2Organizations": [
-                {"name": "Canadian Forces Recruiting Group"},
-                {"name": "Canadian Forces Training Group"},
-                {"name": "Director Military Career Management"}
-            ]
-        },
-        {
-            "name": "Defence Research and Development Canada (DRDC)",
-            "L2Organizations": [
-                {"name": "DRDC - Ottawa"},
-                {"name": "DRDC - Atlantic"},
-                {"name": "DRDC - Pacific"}
-            ]
-        },
-        {
-            "name": "Defence Intelligence",
-            "L2Organizations": [
-                {"name": "Canadian Forces Intelligence Command (CFINTCOM)"}
-            ]
-        },
-        {
-            "name": "Vice Chief of Defence Staff (VCDS)",
-            "L2Organizations": [
-                {"name": "idk"}
-            ]
-        },
-        {
-            "name": "Canadian Joint Operations Center (CJOC)",
-            "L2Organizations": [
-                {"name": "Joint Targeting Intelligence Centre"},
-                {"name": "Joint Task Force North"},
-                {"name": "Canadian Materiel Support Group"},
-                {"name": "Canadian Forces Joint Operations Support Group"},
-                {"name": "1st Canadian Division Headquarters"},
-                {"name": "Canadian Joint Warfare Center"},
-                {"name": "Canadian Joint Operations Command Outside of Canada"}
-            ]
+          "name": "Canadian Army Doctrine Training Centre (CADTC)",
+          "L3Organizations": [
+            {"name": "Peace Support Training Centre"},
+            {"name": "Canadian Army Command and Staff College"},
+            {"name": "Combat Training Centre (CTC) Headquarters"},
+            {"name": "Canadian Manoeuvre Training Centre(CMTC)"}
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "name": "Royal Canadian Air Force (RCAF)",
+      "L2Organizations": [
+        {"name": "1 Canadian Air Division"},
+        {"name": "2 Canadian Air Division"},
+        {"name": "3 Canadian Space Division"},
+        {"name": "Air Mobility Group (AMG)"},
+        {"name": "RCAF Aerisoace Warfare Centre"}
+      ]
+    },
+    {
+      "name": "Canadian Special Operations Forces Command (CANSOFCOM)",
+      "L2Organizations": [
+        {"name": "Joint Task Force 2 (JTF2)"},
+        {"name": "Canadian Special Operations Regiment (CSOR)"}
+      ]
+    },
+    {
+      "name": "Military Personnel Command (MPC)",
+      "L2Organizations": [
+        {"name": "Canadian Forces Recruiting Group"},
+        {"name": "Canadian Forces Training Group"},
+        {"name": "Director Military Career Management"}
+      ]
+    },
+    {
+      "name": "Defence Research and Development Canada (DRDC)",
+      "L2Organizations": [
+        {"name": "DRDC - Ottawa"},
+        {"name": "DRDC - Atlantic"},
+        {"name": "DRDC - Pacific"}
+      ]
+    },
+    {
+      "name": "Defence Intelligence",
+      "L2Organizations": [
+        {"name": "Canadian Forces Intelligence Command (CFINTCOM)"}
+      ]
+    },
+    {
+      "name": "Vice Chief of Defence Staff (VCDS)",
+      "L2Organizations": [{"name": "idk"}]
+    },
+    {
+      "name": "Canadian Joint Operations Command (CJOC)",
+      "L2Organizations": [
+        {"name": "Joint Task Force North"},
+        {"name": "Canadian Materiel Support Group"},
+        {"name": "Canadian Forces Joint Operations Support Group"},
+        {"name": "1st Canadian Division Headquarters"},
+        {"name": "Canadian Joint Warfare Center"}
+      ]
+    }
+  ]
 }
