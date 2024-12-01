@@ -19,7 +19,7 @@ function App() {
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="OrgSelectionRevised"
+          name="OrgSelection"
           component={OrgSelection}
           options={{title: '', headerTransparent: true}}
         />
