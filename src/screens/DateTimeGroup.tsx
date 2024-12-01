@@ -9,6 +9,8 @@ import {
   Alert,
 } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import InputField from '../components/InputFields';
+import ContinueButton from '../components/ContinueButton';
 
 const DateTimeGroup: React.FC<any> = ({route}) => {
   const {
@@ -40,14 +42,6 @@ const DateTimeGroup: React.FC<any> = ({route}) => {
   };
 
   const handleContinue = () => {
-    // Pass the state to the next screen
-    // navigation.navigate('NextScreen', {
-    //   reportingOrg,
-    //   ccirComd,
-    //   reportTitle,
-    //   reportSubtitle,
-    // });
-    console.log('HERE');
     if (
       Number(latitude) >= -90 &&
       Number(latitude) <= 90 &&
@@ -99,31 +93,23 @@ const DateTimeGroup: React.FC<any> = ({route}) => {
         )}
 
         {/* Location Picker */}
-        <Text style={styles.title}>Enter Latitude</Text>
-        <TextInput
-          style={styles.textInput}
+        <InputField
+          label="Enter Latitude"
           placeholder="Enter Latitude"
-          keyboardType="numeric"
           value={latitude}
           onChangeText={lat => setLatitude(lat)}
         />
 
-        {/* Dropdown: Report Sub-Title */}
-        <Text style={styles.title}>Enter Longitude</Text>
-        <TextInput
-          style={[styles.textInput, {marginBottom: 60}]}
+        <InputField
+          label="Enter Longitude"
           placeholder="Enter Longitude"
-          keyboardType="numeric"
           value={longitude}
           onChangeText={long => setLongitude(long)}
+          style={{
+            input: {marginBottom: 60},
+          }}
         />
-
-        <TouchableOpacity
-          style={[styles.button, {opacity: latitude && longitude ? 1 : 0.5}]}
-          disabled={!validated}
-          onPress={handleContinue}>
-          <Text style={styles.buttonText}>Continue</Text>
-        </TouchableOpacity>
+        <ContinueButton validated={validated} handleContinue={handleContinue} />
       </View>
     </View>
   );
@@ -158,12 +144,6 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     textAlign: 'center',
   },
-  label: {
-    fontSize: 16,
-    fontWeight: '500',
-    marginBottom: 5,
-    textAlign: 'center',
-  },
   dateButton: {
     padding: 10,
     backgroundColor: '#000',
@@ -174,31 +154,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     textAlign: 'center',
     fontSize: 16,
-  },
-  map: {
-    width: '100%',
-    height: 200,
-    marginVertical: 10,
-  },
-  button: {
-    backgroundColor: 'black',
-    paddingVertical: 12,
-    paddingHorizontal: 80,
-    borderRadius: 30,
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 18,
-    textAlign: 'center',
-  },
-  textInput: {
-    height: 50,
-    width: 270,
-    marginBottom: 20,
-    borderColor: 'gray',
-    borderWidth: 1,
-    paddingHorizontal: 10,
-    borderRadius: 5,
   },
 });
 

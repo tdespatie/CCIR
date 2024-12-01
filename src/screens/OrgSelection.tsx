@@ -7,6 +7,8 @@ import {
   TextInput,
 } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
+import InputField from '../components/InputFields';
+import ContinueButton from '../components/ContinueButton';
 
 const OrgSelectionRevised: React.FC<any> = ({navigation}) => {
   const [reportingOrg, setReportingOrg] = useState<string>('');
@@ -100,29 +102,21 @@ const OrgSelectionRevised: React.FC<any> = ({navigation}) => {
         </Picker>
 
         {/* Dropdown: Report Title */}
-        <Text style={styles.title}>Report Title</Text>
-        <TextInput
-          style={styles.textInput}
+        <InputField
+          label="Report Title"
           placeholder="Enter report title"
           value={reportTitle}
-          onChangeText={text => setReportTitle(text)}
-        />
+          onChangeText={text => setReportTitle(text)}></InputField>
 
         {/* Dropdown: Report Sub-Title */}
-        <Text style={styles.title}>Report Sub-Title</Text>
-        <TextInput
-          style={styles.textInput}
+        <InputField
+          label="Report Sub-Title"
           placeholder="Enter report subtitle"
           value={reportSubtitle}
-          onChangeText={text => setReportSubtitle(text)}
-        />
+          onChangeText={text => setReportSubtitle(text)}></InputField>
+
         {/* Button */}
-        <TouchableOpacity
-          style={[styles.button, {opacity: validated ? 1 : 0.5}]}
-          disabled={!validated}
-          onPress={handleContinue}>
-          <Text style={styles.buttonText}>Continue</Text>
-        </TouchableOpacity>
+        <ContinueButton validated={validated} handleContinue={handleContinue} />
       </View>
     </View>
   );
@@ -157,12 +151,6 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     textAlign: 'center',
   },
-  label: {
-    fontSize: 16,
-    fontWeight: '500',
-    marginBottom: 5,
-    textAlign: 'center',
-  },
   picker: {
     height: 50,
     width: 300,
@@ -170,26 +158,6 @@ const styles = StyleSheet.create({
     borderColor: 'gray',
     borderWidth: 1,
     textAlign: 'center',
-  },
-  button: {
-    backgroundColor: 'black',
-    paddingVertical: 12,
-    paddingHorizontal: 80,
-    borderRadius: 30,
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 18,
-    textAlign: 'center',
-  },
-  textInput: {
-    height: 50,
-    width: 270,
-    marginBottom: 20,
-    borderColor: 'gray',
-    borderWidth: 1,
-    paddingHorizontal: 10,
-    borderRadius: 5,
   },
 });
 

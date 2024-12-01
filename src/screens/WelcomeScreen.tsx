@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import CheckBox from 'react-native-check-box';
+import ContinueButton from '../components/ContinueButton';
 
 interface WelcomeScreenProps {
   navigation: {
@@ -13,7 +14,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({navigation}) => {
 
   const handleContinue = () => {
     if (checked) {
-      navigation.navigate('OrgSelectionRevised');
+      navigation.navigate('OrgSelection');
     }
   };
 
@@ -48,12 +49,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({navigation}) => {
       </View>
 
       {/* Continue Button */}
-      <TouchableOpacity
-        style={[styles.button, {opacity: checked ? 1 : 0.5}]}
-        onPress={handleContinue}
-        disabled={!checked}>
-        <Text style={styles.buttonText}>Continue</Text>
-      </TouchableOpacity>
+      <ContinueButton validated={checked} handleContinue={handleContinue} />
     </View>
   );
 };
@@ -88,17 +84,6 @@ const styles = StyleSheet.create({
   },
   checkboxText: {
     fontSize: 16,
-  },
-  button: {
-    backgroundColor: 'black',
-    paddingVertical: 12,
-    paddingHorizontal: 80,
-    borderRadius: 30,
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 18,
-    textAlign: 'center',
   },
 });
 

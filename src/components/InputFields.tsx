@@ -1,5 +1,13 @@
 import React from 'react';
-import {View, Text, TextInput, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  StyleProp,
+  ViewStyle,
+  TextStyle,
+} from 'react-native';
 
 // Define the types for the props this component will accept
 interface InputFieldProps {
@@ -7,6 +15,9 @@ interface InputFieldProps {
   placeholder: string; // Placeholder text
   value: string; // Current value of the input
   onChangeText: (text: string) => void; // Callback for text input changes
+  style?: {
+    [key: string]: StyleProp<ViewStyle | TextStyle>; // Allow any kind of style with a key-value structure
+  };
 }
 
 const InputField: React.FC<InputFieldProps> = ({
@@ -14,26 +25,23 @@ const InputField: React.FC<InputFieldProps> = ({
   placeholder,
   value,
   onChangeText,
+  style = {},
 }) => {
   return (
-    <View style={styles.container}>
+    <>
       <Text style={styles.label}>{label}</Text>
       <TextInput
-        style={styles.textInput}
+        style={[styles.textInput, style['input']]}
         placeholder={placeholder}
         value={value}
         onChangeText={onChangeText}
       />
-    </View>
+    </>
   );
 };
 
 // Define styles for the component
 const styles = StyleSheet.create({
-  container: {
-    marginBottom: 16,
-    width: '100%', // Adjusts to parent container width
-  },
   label: {
     fontSize: 24,
     fontWeight: '800',
