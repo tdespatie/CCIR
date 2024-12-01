@@ -1,5 +1,3 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
-
 # Getting Started
 
 >**Note**: You need to have NodeJS installed, NPM, Android Stuido + Build Tools, and an Android Virtual Device created using Android API 35 (Other API versions were not tested
